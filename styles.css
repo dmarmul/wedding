@@ -797,7 +797,8 @@ body {
     line-height: 1;
 }
 .schedule-casual-text {
-    font-family: var(--font-handwritten);
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
     font-size: 2rem;
     color: #800008;
     min-width: 100px;
