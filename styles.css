@@ -559,77 +559,91 @@ body {
 @media (max-width: 700px) {
 
     .program-section {
-        padding: 75px 15px 100px;
+        padding: 70px 10px 100px;
     }
 
     .program-title {
-        font-size: 58px;
-        margin-bottom: 60px;
+        font-size: 55px;
+        margin-bottom: 50px;
     }
 
-
+    /* Центральна лінія залишається по центру */
     .wedding-timeline::before {
-        left: 28px;
-        transform: none;
+        left: 50%;
+        transform: translateX(-50%);
         width: 2px;
     }
 
-
+    /* Три колонки:
+       ліва | серця | права */
     .timeline-item {
         display: grid;
-        grid-template-columns: 56px 1fr;
+        grid-template-columns: 1fr 50px 1fr;
         min-height: 220px;
         align-items: center;
     }
 
-
+    /* Центральна колонка */
     .timeline-center {
-        grid-column: 1;
-        grid-row: 1;
-        justify-content: flex-start;
-    }
-
-
-    .timeline-heart {
-        width: 42px;
-        height: 42px;
-        font-size: 23px;
-    }
-
-
-    .timeline-side {
         grid-column: 2;
         grid-row: 1;
-        padding: 20px !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        z-index: 3;
+    }
+
+    /* Ліва частина */
+    .timeline-left {
+        grid-column: 1;
+        grid-row: 1;
+        padding-right: 12px;
+        justify-content: flex-end;
+        text-align: right;
+    }
+
+    /* Права частина */
+    .timeline-right {
+        grid-column: 3;
+        grid-row: 1;
+        padding-left: 12px;
         justify-content: flex-start;
         text-align: left;
-        min-height: 0;
     }
 
+    /* Сердечко */
+    .timeline-heart {
+        width: 38px;
+        height: 38px;
+        font-size: 20px;
+    }
 
+    /* Картинки */
     .timeline-icon {
-        width: 120px;
-        height: 120px;
+        width: 100px;
+        height: 100px;
+        object-fit: contain;
     }
 
-
+    /* Текст */
     .timeline-text {
-        max-width: 100%;
+        max-width: 145px;
     }
-
 
     .timeline-time {
-        font-size: 22px;
+        font-size: 18px;
+        line-height: 1.2;
     }
-
 
     .timeline-title {
-        font-size: 25px;
+        font-size: 15px;
+        line-height: 1.3;
     }
 
-
     .timeline-description {
-        font-size: 16px;
+        font-size: 13px;
+        line-height: 1.35;
     }
 }
 /* Countdown Grid (Warm & Friendly) */
