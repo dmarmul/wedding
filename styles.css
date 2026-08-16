@@ -789,8 +789,9 @@ body {
 }
 
 .schedule-casual-time {
-    font-family: var(--font-handwritten);
-    font-size: 3rem;
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    font-size: 2rem;
     color: #800008;
     min-width: 100px;
     text-align: left;
