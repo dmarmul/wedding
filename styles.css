@@ -796,7 +796,14 @@ body {
     text-align: left;
     line-height: 1;
 }
-
+.schedule-casual-text {
+    font-family: var(--font-handwritten);
+    font-size: 2rem;
+    color: #800008;
+    min-width: 100px;
+    text-align: left;
+    line-height: 1;
+}
 .schedule-casual-content {
   background: var(--bg-card);
   padding: 1.25rem 1.75rem;
