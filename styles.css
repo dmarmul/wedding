@@ -1,0 +1,338 @@
+/* ==========================================================================
+   Design System & Custom Properties (Warm & Cozy Casual Vibe)
+   ========================================================================== */
+:root {
+  /* Color Palette */
+  --bg-main: #faf8f3;
+  --bg-card: #ffffff;
+  --bg-card-alt: #f3efe6;
+  
+  --terracotta: #e07a5f;
+  --terracotta-dark: #c85a3f;
+  --sage: #81b29a;
+  --sage-light: #e8f3ee;
+  --sand: #f2cc8f;
+  --sand-light: #fcf4e4;
+  
+  --text-main: #2b2d42;
+  --text-muted: #6c757d;
+  --text-light: #8d99ae;
+  
+  /* Typography */
+  --font-handwritten: 'Caveat', cursive;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  
+  /* Layout & Spacing */
+  --container-max: 1100px;
+  --radius-sm: 12px;
+  --radius-md: 20px;
+  --radius-lg: 32px;
+  --radius-full: 9999px;
+  
+  /* Shadows & Effects */
+  --shadow-soft: 0 10px 30px rgba(43, 45, 66, 0.06);
+  --shadow-card: 0 16px 40px rgba(43, 45, 66, 0.08);
+  --shadow-polaroid: 0 20px 45px rgba(0, 0, 0, 0.12);
+  
+  --transition-bouncy: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  --transition-smooth: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ==========================================================================
+   Reset & Base Styles
+   ========================================================================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: auto; /* Handled by Lenis */
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  overflow-x: hidden;
+}
+
+body {
+  min-height: 100vh;
+  line-height: 1.6;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-main);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(224, 122, 95, 0.4);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--terracotta);
+}
+
+/* ==========================================================================
+   Typography Helpers
+   ========================================================================== */
+.font-handwritten {
+  font-family: var(--font-handwritten);
+  font-size: 1.3em;
+  color: var(--terracotta);
+  line-height: 1;
+}
+
+.text-terracotta { color: var(--terracotta); }
+.text-sage { color: var(--sage); }
+
+.tag-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1.25rem;
+  border-radius: var(--radius-full);
+  background: var(--sand-light);
+  border: 1.5px dashed var(--terracotta);
+  color: var(--terracotta-dark);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   Layout Containers
+   ========================================================================== */
+.section-container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 5rem 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+@media (min-width: 768px) {
+  .section-container {
+    padding: 7rem 2rem;
+  }
+}
+
+.card-warm {
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  box-shadow: var(--shadow-card);
+  border: 1px solid rgba(43, 45, 66, 0.05);
+  transition: var(--transition-bouncy);
+}
+
+.card-warm:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 50px rgba(43, 45, 66, 0.12);
+}
+
+/* ==========================================================================
+   Hero Section (Warm Sunset & String Lights Vibe)
+   ========================================================================== */
+.hero-casual {
+  position: relative;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 4rem 1.5rem;
+  background: linear-gradient(180deg, #fcf4e4 0%, #faf8f3 100%);
+  overflow: hidden;
+}
+
+.hero-bg-casual {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 110%;
+  background-image: url('assets/hero-casual.png');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.5;
+  z-index: 0;
+}
+
+.hero-content-casual {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+}
+
+.hero-title-casual {
+  font-family: var(--font-sans);
+  font-weight: 800;
+  font-size: clamp(2.75rem, 7vw, 5.25rem);
+  line-height: 1.1;
+  color: var(--text-main);
+  margin: 1rem 0 1.25rem 0;
+}
+
+.hero-title-casual span {
+  font-family: var(--font-handwritten);
+  font-size: 1.2em;
+  color: var(--terracotta);
+  font-weight: 700;
+  display: inline-block;
+  transform: rotate(-3deg);
+}
+
+.hero-subtitle-casual {
+  font-size: clamp(1.1rem, 2.2vw, 1.35rem);
+  color: var(--text-muted);
+  max-width: 620px;
+  margin: 0 auto 2.5rem auto;
+}
+
+/* Countdown Grid (Warm & Friendly) */
+.countdown-casual-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  max-width: 460px;
+  margin: 0 auto 2.5rem auto;
+}
+
+.countdown-casual-box {
+  background: var(--bg-card);
+  border: 2px solid var(--sand);
+  border-radius: var(--radius-md);
+  padding: 0.85rem 0.5rem;
+  box-shadow: var(--shadow-soft);
+}
+
+.countdown-casual-val {
+  font-weight: 800;
+  font-size: clamp(1.5rem, 3.5vw, 2.25rem);
+  color: var(--terracotta);
+  line-height: 1;
+  display: block;
+}
+
+.countdown-casual-lbl {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-light);
+  margin-top: 0.3rem;
+  display: block;
+}
+/* ==========================================================================
+   Details Grid (Casual & Clean)
+   ========================================================================== */
+.section-header-casual {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 3.5rem auto;
+}
+
+.section-header-casual h2 {
+  font-size: clamp(2.25rem, 4vw, 3.25rem);
+  margin-bottom: 0.75rem;
+}
+
+.details-casual-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .details-casual-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.detail-casual-card {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.detail-casual-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: var(--radius-md);
+  background: var(--sage-light);
+  color: var(--sage);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+}
+
+.detail-casual-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.detail-casual-card p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+/* ==========================================================================
+   Casual Schedule Timeline
+   ========================================================================== */
+.schedule-casual-wrap {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.schedule-casual-item {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+  position: relative;
+}
+
+.schedule-casual-time {
+  font-family: var(--font-handwritten);
+  font-size: 1.8rem;
+  color: var(--terracotta);
+  min-width: 100px;
+  text-align: right;
+  line-height: 1;
+}
+
+.schedule-casual-content {
+  background: var(--bg-card);
+  padding: 1.25rem 1.75rem;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-soft);
+  flex-grow: 1;
+}
+
+.schedule-casual-content h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.35rem;
+}
+
+.schedule-casual-content p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+/* Footer */
+.footer-casual {
+  text-align: center;
+  padding: 4rem 1.5rem 2rem 1.5rem;
+  color: var(--text-light);
+  font-size: 0.9rem;
+  border-top: 1px dashed rgba(43, 45, 66, 0.15);
+}
