@@ -197,7 +197,18 @@ body {
     margin: 0 0 45px;
     color: #8a1115;
 }
+.final {
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    text-align: center;
+    color: #8a1115;
+}
 
+    .final h2 {
+        font-family: "Cormorant Garamond", serif;
+        font-style: italic;
+        color: #8a1115;
+    }
 
 /* Сітка */
 
@@ -231,14 +242,14 @@ body {
 
 /* Серце */
 
-    .calendar-days .wedding-day .heart {
-        position: absolute;
-        top: -13px;
-        font-size: 54px;
-        line-height: 1;
-        color: #8a1115;
-        z-index: 1;
-    }
+        .calendar-days .wedding-day .heart {
+            position: absolute;
+            top: -13px;
+            font-size: 54px;
+            line-height: 1;
+            color: #8a1115;
+            z-index: 1;
+        }
     /* Кожен день */
 
     .calendar-days > span {
@@ -491,7 +502,7 @@ body {
 
 .schedule-casual-time {
   font-family: var(--font-handwritten);
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   color: var(--terracotta);
   min-width: 100px;
   text-align: right;
@@ -520,6 +531,6 @@ body {
   text-align: center;
   padding: 4rem 1.5rem 2rem 1.5rem;
   color: var(--text-light);
-  font-size: 0.7rem;
+  font-size: 0.9rem;
   border-top: 1px dashed rgba(43, 45, 66, 0.15);
 }
