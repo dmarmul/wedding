@@ -90,6 +90,8 @@ body {
     font-family: var(--font-handwritten);
     font-size: 2em;
     color: #8a1115;
+    margin-top: 35px;
+    margin-bottom: 35px;
     line-height: 1;
 }
 
@@ -296,6 +298,7 @@ body {
     align-items: center;
     gap: 22px;
     margin-top: 35px;
+    margin-bottom: 35px;
 }
 
 .color-circle {
@@ -396,7 +399,239 @@ body {
   max-width: 620px;
   margin: 0 auto 2.5rem auto;
 }
+/* =========================
+   ПРОГРАМА ДНЯ
+========================= */
 
+.program-section {
+    position: relative;
+    padding: 100px 20px 140px;
+    background: #f3eee7;
+    color: #800008;
+    overflow: hidden;
+}
+
+
+/* Заголовок */
+
+.program-title {
+    text-align: center;
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(60px, 8vw, 105px);
+    margin: 0 0 80px;
+    color: #800008;
+}
+
+
+/* Таймлайн */
+
+.wedding-timeline {
+    position: relative;
+    width: min(1050px, 100%);
+    margin: auto;
+}
+
+
+    /* Центральна лінія */
+
+    .wedding-timeline::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        width: 3px;
+        transform: translateX(-50%);
+        background: #800008;
+    }
+
+
+/* Один елемент */
+
+.timeline-item {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 80px 1fr;
+    min-height: 260px;
+    align-items: center;
+}
+
+
+/* Ліва / права частини */
+
+.timeline-side {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 180px;
+}
+
+
+/* Ліва */
+
+.timeline-left {
+    justify-content: flex-end;
+    padding-right: 70px;
+    text-align: right;
+}
+
+
+/* Права */
+
+.timeline-right {
+    justify-content: flex-start;
+    padding-left: 70px;
+    text-align: left;
+}
+
+
+/* Центральна частина */
+
+.timeline-center {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 3;
+}
+
+
+/* Серце */
+
+.timeline-heart {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #800008;
+    color: white;
+    font-size: 27px;
+    transform: rotate(0deg);
+    clip-path: polygon( 50% 100%, 0 40%, 0 20%, 10% 5%, 25% 0, 50% 18%, 75% 0, 90% 5%, 100% 20%, 100% 40% );
+}
+
+
+/* Текст */
+
+.timeline-text {
+    max-width: 390px;
+}
+
+
+/* Назва */
+
+.timeline-title {
+    font-family: Montserrat, sans-serif;
+    font-size: 35px;
+    line-height: 1.3;
+    color: #800008;
+}
+
+
+/* Адреса / опис */
+
+.timeline-description {
+    font-size: 20px;
+    line-height: 1.4;
+    margin-top: 5px;
+    color: #800008;
+}
+
+
+/* Іконки */
+
+.timeline-icon {
+    width: 180px;
+    height: 180px;
+    object-fit: contain;
+    display: block;
+}
+
+
+/* =========================
+   МОБІЛЬНА ВЕРСІЯ
+========================= */
+
+@media (max-width: 700px) {
+
+    .program-section {
+        padding: 75px 15px 100px;
+    }
+
+    .program-title {
+        font-size: 58px;
+        margin-bottom: 60px;
+    }
+
+
+    .wedding-timeline::before {
+        left: 28px;
+        transform: none;
+        width: 2px;
+    }
+
+
+    .timeline-item {
+        display: grid;
+        grid-template-columns: 56px 1fr;
+        min-height: 220px;
+        align-items: center;
+    }
+
+
+    .timeline-center {
+        grid-column: 1;
+        grid-row: 1;
+        justify-content: flex-start;
+    }
+
+
+    .timeline-heart {
+        width: 42px;
+        height: 42px;
+        font-size: 23px;
+    }
+
+
+    .timeline-side {
+        grid-column: 2;
+        grid-row: 1;
+        padding: 20px !important;
+        justify-content: flex-start;
+        text-align: left;
+        min-height: 0;
+    }
+
+
+    .timeline-icon {
+        width: 120px;
+        height: 120px;
+    }
+
+
+    .timeline-text {
+        max-width: 100%;
+    }
+
+
+    .timeline-time {
+        font-size: 22px;
+    }
+
+
+    .timeline-title {
+        font-size: 25px;
+    }
+
+
+    .timeline-description {
+        font-size: 16px;
+    }
+}
 /* Countdown Grid (Warm & Friendly) */
 .countdown-casual-grid {
   display: grid;
@@ -501,12 +736,12 @@ body {
 }
 
 .schedule-casual-time {
-  font-family: var(--font-handwritten);
-  font-size: 1.8rem;
-  color: var(--terracotta);
-  min-width: 100px;
-  text-align: right;
-  line-height: 1;
+    font-family: var(--font-handwritten);
+    font-size: 3rem;
+    color: #800008;
+    min-width: 100px;
+    text-align: right;
+    line-height: 1;
 }
 
 .schedule-casual-content {
