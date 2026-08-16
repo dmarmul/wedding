@@ -536,7 +536,7 @@ body {
 
 .timeline-description {
     font-size: 30px;
-    line-height: 1.4;
+    line-height: 2;
     margin-top: 5px;
     color: #800008;
 }
@@ -660,7 +660,7 @@ body {
 
     .timeline-description {
         font-size: 13px !important;
-        line-height: 1.35 !important;
+        line-height: 2 !important;
     }
 
     /* Картинки */
