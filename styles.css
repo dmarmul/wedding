@@ -57,12 +57,12 @@ html {
 }
 
 body {
-  min-height: 100vh;
-  line-height: 1.6;
-  background-color: var(--bg-main);
-  color: var(--text-main);
-  position: relative;
-  overflow-x: hidden;
+    min-height: 100vh;
+    line-height: 1.6;
+    background-color: var(--bg-main);
+    color: #7c1115;
+    position: relative;
+    overflow-x: hidden;
 }
 
 /* Custom Scrollbar */
@@ -87,28 +87,37 @@ body {
    Typography Helpers
    ========================================================================== */
 .font-handwritten {
-  font-family: var(--font-handwritten);
-  font-size: 1.3em;
-  color: var(--terracotta);
-  line-height: 1;
+    font-family: var(--font-handwritten);
+    font-size: 2em;
+    color: #7c1115;
+    line-height: 1;
 }
 
 .text-terracotta { color: var(--terracotta); }
 .text-sage { color: var(--sage); }
 
 .tag-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.5rem 1.25rem;
-  border-radius: var(--radius-full);
-  background: var(--sand-light);
-  border: 1.5px dashed var(--terracotta);
-  color: var(--terracotta-dark);
-  font-weight: 600;
-  font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1.25rem;
+    border-radius: var(--radius-full);
+    background: var(--sand-light);
+    border: 1.5px dashed var(--terracotta);
+    color: #7c1115;
+    font-weight: 600;
+    font-size: 0.9rem;
 }
-
+.right-side {
+    text-align: right;
+    font-size: 4rem;
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(55px, 7vw, 85px);
+    margin: 0 0 45px;
+    color: #8a1115;
+}
 /* ==========================================================================
    Layout Containers
    ========================================================================== */
@@ -138,6 +147,212 @@ body {
 .card-warm:hover {
   transform: translateY(-6px);
   box-shadow: 0 24px 50px rgba(43, 45, 66, 0.12);
+}
+/* =========================
+   WEDDING CALENDAR
+========================= */
+
+.calendar-wedding {
+    position: relative;
+    min-height: 900px;
+    overflow: hidden;
+    background: radial-gradient( rgba(120, 90, 70, 0.035) 1px, transparent 1px ), #f7f4ee;
+    background-size: 7px 7px;
+    color: #7c1115;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 120px 20px;
+}
+
+
+    /* Легкий ефект паперу */
+
+    .calendar-wedding::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient( rgba(255,255,255,.35), rgba(255,255,255,.35) );
+        pointer-events: none;
+    }
+
+
+/* Контент */
+
+.calendar-content {
+    position: relative;
+    z-index: 5;
+    width: min(620px, 100%);
+    text-align: center;
+}
+
+
+/* Назва місяця */
+
+.calendar-month {
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(55px, 7vw, 85px);
+    margin: 0 0 45px;
+    color: #8a1115;
+}
+
+
+/* Сітка */
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    width: 100%;
+}
+
+
+/* Дні тижня */
+
+.calendar-weekdays {
+    margin-bottom: 30px;
+    font-family: Montserrat, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: #791014;
+}
+
+
+/* Числа */
+
+.calendar-days {
+    row-gap: 22px;
+    font-family: Montserrat, sans-serif;
+    font-size: 17px;
+    font-weight: 500;
+    color: #791014;
+}
+
+/* Серце */
+
+        .calendar-days .wedding-day .heart {
+            position: absolute;
+            top: -13px;
+            font-size: 54px;
+            line-height: 1;
+            color: #8a080d;
+            z-index: 1;
+        }
+    /* Кожен день */
+
+    .calendar-days > span {
+        height: 38px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        z-index: 2;
+    }
+
+
+        
+
+
+/* Рік */
+
+.calendar-year {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 55px;
+    font-weight: 400;
+    color: #8a1115;
+    letter-spacing: .04em;
+}
+
+
+/* Велике декоративне серце справа */
+
+.calendar-heart-big {
+    position: absolute;
+    right: -90px;
+    bottom: 70px;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 420px;
+    line-height: .7;
+    color: rgba(100, 120, 100, .18);
+    transform: rotate(-10deg);
+    z-index: 1;
+    pointer-events: none;
+}
+
+
+/* Верхня декоративна гілка */
+
+.calendar-leaves-top {
+    position: absolute;
+    right: -20px;
+    top: -40px;
+    width: 210px;
+    height: 400px;
+    border-left: 4px solid #0d3518;
+    border-radius: 50%;
+    transform: rotate(-25deg);
+    opacity: .9;
+}
+
+
+/* Нижня декоративна гілка */
+
+.calendar-leaves-bottom {
+    position: absolute;
+    left: -70px;
+    bottom: -90px;
+    width: 260px;
+    height: 430px;
+    border-right: 4px solid #0d3518;
+    border-radius: 50%;
+    transform: rotate(25deg);
+    opacity: .9;
+}
+
+
+    /* Листочки */
+
+    .calendar-leaves-top::before,
+    .calendar-leaves-top::after,
+    .calendar-leaves-bottom::before,
+    .calendar-leaves-bottom::after {
+        content: "";
+        position: absolute;
+        width: 85px;
+        height: 35px;
+        border: 3px solid #0d3518;
+        border-radius: 100% 0;
+        transform: rotate(-35deg);
+    }
+
+
+/* Верхні листочки */
+
+.calendar-leaves-top::before {
+    left: -65px;
+    top: 120px;
+}
+
+.calendar-leaves-top::after {
+    left: -40px;
+    top: 210px;
+    transform: rotate(25deg);
+}
+
+
+/* Нижні листочки */
+
+.calendar-leaves-bottom::before {
+    right: -60px;
+    top: 80px;
+    transform: rotate(35deg);
+}
+
+.calendar-leaves-bottom::after {
+    right: -80px;
+    top: 180px;
+    transform: rotate(-25deg);
 }
 
 /* ==========================================================================
