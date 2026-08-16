@@ -198,15 +198,6 @@ body {
     color: #8a1115;
 }
 
-.title {
-    font-family: "Cormorant Garamond", serif;
-    font-style: italic;
-    font-weight: 400;
-    font-size: xx-large;
-    margin: 0 0 45px;
-    color: #8a1115;
-}
-
 
 /* Сітка */
 
@@ -500,7 +491,7 @@ body {
 
 .schedule-casual-time {
   font-family: var(--font-handwritten);
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   color: var(--terracotta);
   min-width: 100px;
   text-align: right;
@@ -529,6 +520,6 @@ body {
   text-align: center;
   padding: 4rem 1.5rem 2rem 1.5rem;
   color: var(--text-light);
-  font-size: 0.9rem;
+  font-size: 0.7rem;
   border-top: 1px dashed rgba(43, 45, 66, 0.15);
 }
