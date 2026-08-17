@@ -50,7 +50,7 @@ function initScrollAnimations() {
 // 3. Live Countdown Timer
 // ==========================================================================
 function initCountdownTimer() {
-  const eventDate = new Date('2026-10-03T13:00:00').getTime();
+  const eventDate = new Date('2026-10-03T12:00:00').getTime();
 
   const cdDays = document.getElementById('cdDays');
   const cdHours = document.getElementById('cdHours');
